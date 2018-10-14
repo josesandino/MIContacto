@@ -41,14 +41,42 @@
                                 <input type="text" class="form-control" id="apellido_invitado" name="apellido_invitado" placeholder="Apellido">
                             </div>
                             <div class="form-group">
-                                <label for="biografia_invitado">Biografia: </label>
-                                <textarea class="form-control" name="biografia_invitado" id="biografia_invitado"  rows="8" placeholder="Biografía"></textarea>
+                                <label for="cedula_prospecto">Cedula de Identidad:</label>
+                                <input type="text" class="form-control" id="cedula_prospecto" name="cedula_prospecto" placeholder="Numero de Cedula">
                             </div>
+                            <div class="form-group">
+                                <label for="ciudad_prospecto">Ciudad:</label>
+                                <input type="text" class="form-control" id="ciudad_prospecto" name="ciudad_prospecto" placeholder="Ciudad">
+                            </div> 
+                            <div class="form-group">
+                                <label for="municipio_prospecto">Municipio:</label>
+                                <input type="text" class="form-control" id="municipio_prospecto" name="municipio_prospecto" placeholder="Municipio">
+                            </div>   
+                            <div class="form-group">
+                                <label for="colonia_prospecto">Colonia o Barrio:</label>
+                                <input type="text" class="form-control" id="colonia_prospecto" name="colonia_prospecto" placeholder="Colonia, Villa o Barrio">
+                            </div>  
+                            <div class="form-group">
+                                <label for="direccion_prospecto">Dirección:</label>
+                                <input type="text" class="form-control" id="direccion_prospecto" name="direccion_prospecto" placeholder="Dirección indicando un punto de referencia">
+                            </div>  
                             <div class="form-group">
                                 <label for="imagen_invitado">Imagen:</label>
                                 <input clase="form-control" type="file" id="imagen_invitado" name="archivo_imagen">
-                                <p class="help-block">Añada la imagen del invitado aquí</p>
-                            </div>                                                    
+                                <p class="help-block">Añada la imagen del prospecto aquí</p>
+                            </div> 
+                            <div class="form-group">
+                                <label for="biografia_invitado">Observacion: </label>
+                                <textarea class="form-control" name="biografia_invitado" id="biografia_invitado"  rows="8" placeholder="Observaciones que destaquen del prospecto"></textarea>
+                            </div> 
+                            <div class="form-group">
+                                <label for="facebook_url">Facebook:</label>
+                                <input type="text" class="form-control" id="facebook_url" name="facebook_url" placeholder="Facebook o No encontrado">
+                            </div> 
+                            <div class="form-group">
+                                <label for="twitter_url">Twitter:</label>
+                                <input type="text" class="form-control" id="twitter_url" name="twitter_url" placeholder="Twitter o No encontrado">
+                            </div> 
                       </div>
                       <!-- /.box-body -->
 
