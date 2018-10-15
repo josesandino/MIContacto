@@ -1,15 +1,22 @@
 <?php
 include_once 'funciones/funciones.php';
 
-$nombre_invitado = $_POST['nombre_invitado'];
-$apellido_invitado = $_POST['apellido_invitado'];
-$biografia = $_POST['biografia_invitado'];
+$nombre = $_POST['nombre_invitado'];
+$apellido = $_POST['apellido_invitado'];
+$cedula = $_POST['cedula_prospecto'];
+$ciudad = $_POST['ciudad_prospecto'];
+$municipio = $_POST['municipio_prospecto'];
+$colonia = $_POST['colonia_prospecto'];
+$direccion = $_POST['direccion_prospecto'];
+$comentario = $_POST['biografia_invitado'];
+$facebook = $_POST['facebook_url'];
+$twitter = $_POST['twitter_url'];
 
 
 
 if($_POST['registro'] == 'nuevo') { 
 
-       /* 
+       /*
        $respuesta = array(
            'post' => $_POST,
            'file' => $_FILES
@@ -33,10 +40,18 @@ if($_POST['registro'] == 'nuevo') {
        }
 
     try {
-        $stmt = $conn->prepare('INSERT INTO invitados (nombre_invitado, apellido_invitado, descripcion, url_imagen) VALUES (?, ?, ?, ?) ');
-        $stmt->bind_param("ssss", $nombre, $apellido, $biografia, $imagen_url );
+        $sql = " INSERT INTO nombre_prospecto, apellido_prospecto, cedula_prospecto, ciudad_prospecto, municipio_prospecto, barrio_prospecto, direccion_prospecto, foto_prospecto, observacion_prospecto, url_facebook, url_twitter  ";
+        $sql .= " FROM general_prospecto ";
+        $sql .= " INNER JOIN ubicacion_prospecto ";
+        $sql .= " ON general_prospecto.id_general=ubicacion_prospecto.id_gen_pro ";
+        $sql .= " INNER JOIN virtual_prospecto ";
+        $sql .= " ON general_prospecto.id_general=virtual_prospecto.id_vir_gen ";
+        $sql .= " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssssssssssss", $nombre, $apellido, $cedula, $ciudad, $municipio, $colonia, $direccion, $imagen_url, $comentario, $facebook, $twitter );
         $stmt->execute();
-        $id_insertado = $stmt->insert_id;
+        $id_insertado = $stmt->insert_id;     
+        
         if($stmt->affected_rows) {
           $respuesta = array(
               'respuesta' => 'exito',
