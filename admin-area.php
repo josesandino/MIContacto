@@ -12,8 +12,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Blank page
-        <small>it all starts here</small>
+        Base de Prospectos
+        <small>MI Contacto verificado</small>
       </h1>
     </section>
 
@@ -23,14 +23,28 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
+        <h2 class="mt-0 mb-1"><b>Actividades a Realizar</b></h2>
         </div>
-        <div class="box-body">
-          Start creating your amazing application!
-        </div>
-        <!-- /.box-body -->
+        <ul class="list-unstyled">
+              <li class="media">
+                    <div class="media-body"> 
+                    <h3 class="mt-1 mb-1">Crear perfil de prospecto</h3><br>
+                    <a href="crear-invitado.php"><img class="mr-3 col-sm" float:right; margin:10;  width="50"src="img/agregar contacto.png" alt="Crear Prospectos"></a>
+                     Puedes crear los perfiles de los prospectos en el siguiente enlace: <a href="crear-invitado.php">Crear Perfil</a>.
+                    </div>
+              </li>
+              <li class="media my-4">
+                    <div class="media-body">
+                    <h3 class="mt-0 mb-1">Revisar base de prospectos</h3><br>
+                    <a href="lista-invitados.php"><img class="mr-3 col-sm" float:right; margin:10;  width="50"src="img/buscar.png" alt="Buscar Prospectos"></a>                  
+                      Puedes ver y revisar los datos de perfiles de prospectos creados anteriormente con la finalidad de no duplicar datos.
+                      Accede al panel de busqueda en el siguiente enlace: <a href="lista-invitados.php">Buscar.</a>
+                    </div>
+              </li>              
+        </ul>
+        <br>        
         <div class="box-footer">
-          Footer
+        <i><b>Nota:</b> Puedes hacer click en el enlace o la imagen.</i>
         </div>
         <!-- /.box-footer-->
       </div>

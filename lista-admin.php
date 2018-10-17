@@ -31,7 +31,7 @@
                 <thead>
                 <tr>
                   <th>Usuario</th>
-                  <th>Nombre</th>
+                  <th>Alias</th>
                   <th>Acciones</th>
                 </tr>
                 </thead>
@@ -62,7 +62,7 @@
                 <tfoot>
                 <tr>
                   <th>Usuario</th>
-                  <th>Nombre</th>
+                  <th>Alias</th>
                   <th>Acciones</th>
                 </tr>
                 </tfoot>

@@ -17,8 +17,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Editar Administrador
-        <small>puedes editar los datos del administrador aquí</small>
+        Editar Delegado
+        <small>puedes editar los datos del delegado aquí</small>
       </h1>
     </section>
 
@@ -31,7 +31,7 @@
           <!-- Default box -->
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Editar Administrador</h3>
+              <h3 class="box-title">Editar Delegado</h3>
             </div>
             <div class="box-body">
                 <?php                
@@ -47,7 +47,7 @@
                                 <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" value="<?php echo $admin['usuario']; ?>">
                             </div>
                             <div class="form-group">
-                                <label for="nombre">Nombre:</label>
+                                <label for="nombre">Alias:</label>
                                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu Nombre Completo" value="<?php echo $admin['nombre']; ?>">
                             </div>
                             <div class="form-group">

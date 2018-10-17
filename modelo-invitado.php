@@ -11,6 +11,8 @@ $direccion = $_POST['direccion_prospecto'];
 $comentario = $_POST['biografia_invitado'];
 $facebook = $_POST['facebook_url'];
 $twitter = $_POST['twitter_url'];
+$telefono = $_POST['telefono_prospecto'];
+$id_registro = $_POST['id_registro'];
 
 
 
@@ -24,7 +26,7 @@ if($_POST['registro'] == 'nuevo') {
        die(json_encode($respuesta));
        */
 
-       $directorio ="img/invitados/";
+       $directorio ="img/prospectos/";
 
        if(!is_dir($directorio)) {
             mkdir($directorio, 0755, true);
@@ -40,15 +42,8 @@ if($_POST['registro'] == 'nuevo') {
        }
 
     try {
-        $sql = " INSERT INTO nombre_prospecto, apellido_prospecto, cedula_prospecto, ciudad_prospecto, municipio_prospecto, barrio_prospecto, direccion_prospecto, foto_prospecto, observacion_prospecto, url_facebook, url_twitter  ";
-        $sql .= " FROM general_prospecto ";
-        $sql .= " INNER JOIN ubicacion_prospecto ";
-        $sql .= " ON general_prospecto.id_general=ubicacion_prospecto.id_gen_pro ";
-        $sql .= " INNER JOIN virtual_prospecto ";
-        $sql .= " ON general_prospecto.id_general=virtual_prospecto.id_vir_gen ";
-        $sql .= " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssssssssssss", $nombre, $apellido, $cedula, $ciudad, $municipio, $colonia, $direccion, $imagen_url, $comentario, $facebook, $twitter );
+        $stmt = $conn->prepare("INSERT INTO prospecto (nombre_prospecto, apellido_prospecto, cedula_prospecto, foto_prospecto, observacion_prospecto, ciudad_prospecto, municipio_prospecto, barrio_prospecto, direccion_prospecto, url_facebook, url_twitter, telefono_prospecto, editado) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,NOW())");
+        $stmt->bind_param("sssssssssssi",  $nombre, $apellido, $cedula, $imagen_url, $comentario, $ciudad, $municipio, $colonia, $direccion, $facebook, $twitter, $telefono);
         $stmt->execute();
         $id_insertado = $stmt->insert_id;     
         
@@ -70,19 +65,40 @@ if($_POST['registro'] == 'nuevo') {
             'respuesta' =>$e->getMessage()
         );
     }
+    
     die(json_encode($respuesta));
 }
 
 if($_POST['registro'] == 'actualizar') {
+    $directorio ="img/prospectos/";
+
+       if(!is_dir($directorio)) {
+            mkdir($directorio, 0755, true);
+       }
+
+       if(move_uploaded_file($_FILES['archivo_imagen']['tmp_name'], $directorio.$_FILES['archivo_imagen']['name'])) {
+           $imagen_url = $_FILES['archivo_imagen']['name'];
+           $imagen_resultado = "Se subió correctamente";
+       } else {
+           $respuesta = array(
+               'respuesta' => error_get_last()
+           );
+       }
    
     try {
-        $stmt = $conn->prepare('UPDATE categoria_evento SET cat_evento = ?, icono = ?, editado = NOW() WHERE id_categoria = ? ');
-        $stmt->bind_param('ssi', $nombre_categoria, $icono, $id_registro );
-        $stmt->execute();
-        if($stmt->affected_rows) {
+        if($_FILES['archivo_imagen']['size'] > 0) {
+            $stmt = $conn->prepare('UPDATE prospecto SET nombre_prospecto = ?, apellido_prospecto = ?, cedula_prospecto = ?, foto_prospecto = ?, observacion_prospecto = ?, ciudad_prospecto = ?, municipio_prospecto = ?, barrio_prospecto = ?, direccion_prospecto =?, url_facebook = ?, url_twitter = ?, telefono_prospecto =  ? , editado = NOW() WHERE id_prospecto = ? ');
+            $stmt->bind_param('sssssssssssii', $nombre, $apellido, $cedula, $imagen_url, $comentario, $ciudad, $municipio, $colonia, $direccion, $facebook, $twitter, $telefono, $id_registro );
+        } else {
+            $stmt = $conn->prepare('UPDATE prospecto SET nombre_prospecto = ?, apellido_prospecto = ?, cedula_prospecto = ?, observacion_prospecto = ?, ciudad_prospecto = ?, municipio_prospecto = ?, barrio_prospecto = ?, direccion_prospecto =?, url_facebook = ?, url_twitter = ?, telefono_prospecto =  ? , editado = NOW() WHERE id_prospecto = ? ');
+            $stmt->bind_param('ssssssssssii', $nombre, $apellido, $cedula, $comentario, $ciudad, $municipio, $colonia, $direccion, $facebook, $twitter, $telefono, $id_registro );
+        }       
+        $estado = $stmt->execute();
+        
+        if($estado == true) {
             $respuesta = array(
                 'respuesta' => 'exito',
-                'id_actualizado' => $id_registro
+                'id_registro' => $id_registro
             );
         } else {
             $respuesta = array(
@@ -104,7 +120,7 @@ if($_POST['registro'] == 'eliminar') {
     $id_borrar = $_POST['id'];
 
     try {
-        $stmt = $conn->prepare('DELETE FROM categoria_evento WHERE id_categoria = ? ');
+        $stmt = $conn->prepare('DELETE FROM prospecto WHERE id_prospecto = ? ');
         $stmt->bind_param('i', $id_borrar);
         $stmt->execute();
         if($stmt->affected_rows) {

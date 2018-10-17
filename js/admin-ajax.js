@@ -18,7 +18,9 @@ $(document).ready(function() {
                         'Se guardó correctamente',
                         'success'
                     )
-                    
+                    setTimeout(function(){
+                        window.location.href = 'lista-admin.php';   
+                }, 1000);
                 } else {
                     swal(
                         'Error!',
@@ -54,6 +56,9 @@ $(document).ready(function() {
                         'Se guardó correctamente',
                         'success'
                     )
+                    setTimeout(function(){
+                        window.location.href = 'lista-invitados.php';   
+                }, 1000);
                     
                 } else {
                     swal(
