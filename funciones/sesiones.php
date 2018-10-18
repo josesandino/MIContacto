@@ -2,7 +2,7 @@
 
 function usuario_autenticado() {
     if(!revisar_usuario() ) {
-        header('Location:admin.php');
+        header('Location:index.php');
         exit();
     }
 }

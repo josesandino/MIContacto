@@ -2,7 +2,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2018 <a href="https://twitter.com/Jotaalt64S">Jota Lander</a>  -  <a href="https://twitter.com/hashtag/VandalNiTeam?src=hash">#VandalNiTeam</a></strong> Todos los derechos reservados. 
+    <strong>Copyright &copy; 2018 <a href="https://twitter.com/Jotaalt64S"  target="_blank">Jota Lander</a>  -  <a href="https://twitter.com/hashtag/VandalNiTeam?src=hash"  target="_blank">#VandalNiTeam</a></strong> Todos los derechos reservados. 
   </footer>
 
   

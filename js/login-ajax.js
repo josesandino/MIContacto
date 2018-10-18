@@ -19,7 +19,7 @@ $(document).ready(function() {
                             'success'
                         )
                         setTimeout(function(){
-                            window.location.href = 'admin-area.php';   
+                            window.location.href = 'contacto-area.php';   
                     }, 1800);
                     } else {
                         swal(

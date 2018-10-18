@@ -66,7 +66,7 @@
                           <td><?php echo $prospectos['telefono_prospecto']; ?></td>
                           <?php if($_SESSION['nivel'] == 1): ?>
                           <td>
-                            <a href="editar-invitado.php?id=<?php echo $prospectos['id_prospecto']; ?>" class="btn bg-orange btn-flat margin ">
+                            <a href="editar-prospecto.php?id=<?php echo $prospectos['id_prospecto']; ?>" class="btn bg-orange btn-flat margin ">
                               <i class="fa fa-pencil"></i>
                             </a>
                             <a href="#" data-id="<?php echo $prospectos['id_prospecto']; ?>" data-tipo="invitado" class="btn bg-maroon btn-flat margin borrar_registro">

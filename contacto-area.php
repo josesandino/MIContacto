@@ -29,16 +29,16 @@
               <li class="media">
                     <div class="media-body"> 
                     <h3 class="mt-1 mb-1">Crear perfil de prospecto</h3><br>
-                    <a href="crear-invitado.php"><img class="mr-3 col-sm" float:right; margin:10;  width="50"src="img/agregar contacto.png" alt="Crear Prospectos"></a>
-                     Puedes crear los perfiles de los prospectos en el siguiente enlace: <a href="crear-invitado.php">Crear Perfil</a>.
+                    <a href="crear-prospecto.php"><img class="mr-3 col-sm" float:right; margin:10;  width="50"src="img/agregar contacto.png" alt="Crear Prospectos"></a>
+                     Puedes crear los perfiles de los prospectos en el siguiente enlace: <a href="crear-prospecto.php">Crear Perfil</a>.
                     </div>
               </li>
               <li class="media my-4">
                     <div class="media-body">
                     <h3 class="mt-0 mb-1">Revisar base de prospectos</h3><br>
-                    <a href="lista-invitados.php"><img class="mr-3 col-sm" float:right; margin:10;  width="50"src="img/buscar.png" alt="Buscar Prospectos"></a>                  
+                    <a href="lista-prospectos.php"><img class="mr-3 col-sm" float:right; margin:10;  width="50"src="img/buscar.png" alt="Buscar Prospectos"></a>                  
                       Puedes ver y revisar los datos de perfiles de prospectos creados anteriormente con la finalidad de no duplicar datos.
-                      Accede al panel de busqueda en el siguiente enlace: <a href="lista-invitados.php">Buscar.</a>
+                      Accede al panel de busqueda en el siguiente enlace: <a href="lista-prospectos.php">Buscar.</a>
                     </div>
               </li>              
         </ul>

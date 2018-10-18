@@ -19,7 +19,7 @@ $(document).ready(function() {
                         'success'
                     )
                     setTimeout(function(){
-                        window.location.href = 'lista-admin.php';   
+                        window.location.href = 'contacto-area.php';   
                 }, 1000);
                 } else {
                     swal(
@@ -57,7 +57,7 @@ $(document).ready(function() {
                         'success'
                     )
                     setTimeout(function(){
-                        window.location.href = 'lista-invitados.php';   
+                        window.location.href = 'lista-prospectos.php';   
                 }, 1000);
                     
                 } else {

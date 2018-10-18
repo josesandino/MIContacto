@@ -9,11 +9,11 @@
         <div class="info">
           
           <p><?php echo $_SESSION['nombre']; ?></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="#"><i class="fa fa-circle text-success"></i>En linea</a>
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      <!--<form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Buscar...">
           <span class="input-group-btn">
@@ -21,7 +21,7 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form>-->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -46,8 +46,8 @@
             <span>Prospectos</span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="lista-invitados.php"><i class="fa fa-list-ul" aria-hidden="true"></i> Ver Todos</a></li>
-            <li><a href="crear-invitado.php"><i class="fa fa-plus-circle"></i> Agregar</a></li>
+            <li><a href="lista-prospectos.php"><i class="fa fa-list-ul" aria-hidden="true"></i> Ver Todos</a></li>
+            <li><a href="crear-prospecto.php"><i class="fa fa-plus-circle"></i> Agregar</a></li>
           </ul>
         </li>
 
@@ -69,8 +69,8 @@
             <span>Delegados</span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="lista-admin.php"><i class="fa fa-list-ul" aria-hidden="true"></i> Ver Todos</a></li>
-            <li><a href="crear-admin.php"><i class="fa fa-plus-circle"></i> Agregar</a></li>
+            <li><a href="lista-delegados.php"><i class="fa fa-list-ul" aria-hidden="true"></i> Ver Todos</a></li>
+            <li><a href="crear-delegado.php"><i class="fa fa-plus-circle"></i> Agregar</a></li>
           </ul>
         </li>
         <?php endif; ?>
