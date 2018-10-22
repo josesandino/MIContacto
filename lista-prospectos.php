@@ -55,7 +55,7 @@
                      }      
                      while($prospectos = $resultado->fetch_assoc() ) { ?>
                       <tr>
-                      <td><img src="img/prospectos/<?php echo $prospectos['foto_prospecto']; ?>" width="150"></td>
+                      <td><img src="img/prospectos/<?php echo $prospectos['foto_prospecto']; ?>" width="150" height="150"></td>
                           <td><?php echo $prospectos['nombre_prospecto'] . " " . $prospectos['apellido_prospecto']; ?></td>
                           <td><?php echo $prospectos['cedula_prospecto']; ?></td>
                           <td><?php echo $prospectos['ciudad_prospecto']; ?></td>                          
